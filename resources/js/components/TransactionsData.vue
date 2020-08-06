@@ -15,7 +15,7 @@
 
         <form @submit.prevent="addTransaction">
             <div class="form-row">
-                <div class="col-6">
+                <div class="col-6 my-2">
                     <input type="number"
                            v-model="amount"
                            @keypress="isNumber($event)"
@@ -27,18 +27,18 @@
                            spellcheck="false"
                     />
                 </div>
-                <div class="col-6 btn-group currency-toggler">
-                    <input type="radio" name="currency" class="d-none" value="uah" id="uah" checked="checked">
-                    <label for="uah" type="button" class="btn btn-secondary">
-                        UAH
-                    </label>
-                    <input type="radio" value="usd" name="currency" class="d-none" id="usd">
-                    <label for="usd" type="button" class="btn btn-secondary">
-                        USD
-                    </label>
+                <div class="col-6 my-2">
+                    <div class="currency_tgl">
+                        <input type="radio" name="currency" value="uah" id="uah" checked="checked">
+                        <label for="uah">UAH</label>
+                    </div>
+                    <div class="currency_tgl">
+                        <input type="radio" value="usd" name="currency" id="usd">
+                        <label for="usd">USD</label>
+                    </div>
                 </div>
 
-                <div class="col-12 btn-group" role="group">
+                <div class="col-12 my-2 btn-group" role="group">
                     <input type="submit" @click="action = true"  class="btn btn-primary" value="+">
                     <input type="submit" @click="action = false" class="btn btn-danger" value="-">
                 </div>
